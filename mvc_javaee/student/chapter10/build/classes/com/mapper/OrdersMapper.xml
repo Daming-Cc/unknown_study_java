@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <!-- namespace 表示命名空间  通常会设置成：包名+SQL映射文件名-->
+ <mapper namespace="com.mapper.OrdersMapper">
+	<!-- 嵌套查询：通过执行另一条sql映射语句来返回预期的特殊类型 -->
+	<select id="findOrdersWithProduct" parameterType="Integer" resultMap="OrdersWithProductResult">
+		select * from tb_orders where id=#{id}
+	</select>
+	<resultMap type="orders" id="OrdersWithProductResult">
+		<id property="id" column="id"/>
+		<result property="number" column="number"/>
+		<collection property="productList" column="id" ofType="Product" select="com.mapper.ProductMapper.findProductById"/>
+	</resultMap>
+	
+	<!-- 多对多嵌套结果查询：查询某订单及其关联的商品详情 -->
+	<select id="findOrdersWithProduct2" parameterType="Integer" resultMap="OrdersWithProductResult2">
+		select 
+			o.*,p.id as pid,p.name,p.price
+		from 
+			tb_orders o,tb_product p,tb_ordersitem i
+		where
+			o.id = i.orders_id and p.id = i.product_id
+			and o.id = #{id}
+	</select>
+	<!-- 自定义手动映射类型 -->
+	<resultMap type="orders" id="OrdersWithProductResult2">
+		<id property="id" column="id"/>
+		<result property="number" column="number"/>
+		<collection property="productList" >
+			<id property="id" column="id"/>
+			<result property="name" column="name"/>
+			<result property="price" column="price"/>
+		
+		</collection>
+		
+	</resultMap>
+
+ </mapper>

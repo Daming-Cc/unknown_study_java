@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                    http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+        <!-- 使用构造注入方式装配user实例 -->
+        <bean id="user1" class="com.itheima.assemble.User">
+        	<constructor-arg index="0" value="tom"/>
+        	<constructor-arg index="1" value="1234"/>
+        	<constructor-arg>
+        		<list>
+        			<value>value1</value>
+        			<value>value2</value>
+        			<value>value3</value>
+        		</list>
+        	</constructor-arg>
+        </bean>
+        <!-- 使用设值注入方式装配User实例 -->
+ 		<bean id="user2" class="com.itheima.assemble.User">
+ 			<property name="userName" value="张三"></property>
+ 			<property name="passWord" value="2323"></property>
+ 			<property name="list">
+ 				<list>
+ 					<value>value1</value>
+ 					<value>value2</value>
+ 				</list>
+ 			</property>
+ 		</bean>
+</beans>

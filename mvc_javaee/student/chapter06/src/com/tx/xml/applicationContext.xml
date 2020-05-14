@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+ 	http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+ 	http://www.springframework.org/schema/tx
+ 	http://www.springframework.org/schema/tx/spring-tx-4.3.xsd
+ 	http://www.springframework.org/schema/aop
+ 	http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+ 	http://www.springframework.org/schema/context
+ 	http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+ 		<!-- 1  配置数据源 -->
+ 		<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+ 			<!-- 数据库驱动 -->
+ 			<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+ 			<!-- 连接数据库的url -->
+ 			<property name="url" value="jdbc:mysql://localhost:3306/jk02_daming"/>
+ 			<!-- 数据库用户名 -->
+ 			<property name="username" value="root"/>
+ 			<!-- 数据库密码 -->
+ 			<property name="password" value="1234"/>
+ 		</bean>
+ 		<!--2 配置jdbc模板 -->
+ 		<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+ 			<!-- 默认必须使用数据源 -->
+ 			<property name="dataSource" ref="dataSource"/>
+ 		</bean>
+ 		<!--3 注入accountDao -->
+ 		<bean id="accountDao" class="com.tx.xml.AccountDaoImpl">
+ 			<!-- 将jdbcTemplate注入到AccountDao中 -->
+ 			<property name="jdbcTemplate" ref="jdbcTemplate"/>
+ 		</bean>
+ 		<!-- 4  事物管理器，依赖于数据源 -->
+ 		<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+ 			<property name="dataSource" ref="dataSource"/>
+ 		</bean>
+ 		<!-- 5  编写通知：对事物进行增强，需要编写对切入点和具体执行事物细节 -->
+ 		<tx:advice id="txAdvice" transaction-manager="transactionManager">
+ 			<tx:attributes>
+ 			<!-- *表示所有方法 -->
+ 				<tx:method name="*" propagation="REQUIRED" isolation="DEFAULT" read-only="false"/>
+ 			</tx:attributes>
+ 		</tx:advice>
+ 		<!-- 6  编写aop 让spring自动对目标生成代理，需要使用AspectJ的表达式 -->
+ 		<aop:config>
+ 			<!--切入点 -->
+ 			<aop:pointcut expression="execution(* com.tx.xml.*.*(..))" id="txPointCut"/>
+ 			<!-- 切面：将切入点与通知整合 -->
+ 			<aop:advisor advice-ref="txAdvice" pointcut-ref="txPointCut"/>
+ 		</aop:config>
+ 	</beans>

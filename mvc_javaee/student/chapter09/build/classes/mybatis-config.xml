@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<properties resource="db.properties"/>
+	<!-- 类路径别名 -->
+	<!-- 对实体类路径用别名uer替代 -->
+	<typeAliases>
+		<!-- <typeAlias alias="user" type="com.po.Customer"/> -->
+		<!-- 使用自动扫描包来定义别名 将类名首字母转成小写，作为别名-->
+		<package name="com.po"/>
+	</typeAliases>
+	<!-- 配置环境，默认的环境id为mysql -->
+	<environments default="mysql">
+	<!-- 配置id为mysql的数据库环境 -->
+		<environment id="mysql">
+			<!-- 使用jdbc事物管理 -->
+			<transactionManager type="JDBC"/>
+			<!-- 数据库连接池 -->
+			<dataSource type="POOLED">
+				<property name="driver" value="${jdbc.driver}"/>
+				<property name="url" value="${jdbc.url}"/>
+				<property name="username" value="${jdbc.username}"/>
+				<property name="password" value="${jdbc.password}"/>
+			</dataSource>
+		</environment>
+	</environments>
+	<!-- 2 配置Mapper的位置 -->
+	<mappers>
+		<mapper resource="com/mapper/CustomerMapper.xml"/>
+		<mapper resource="com/mapper/UserMapper.xml"/>
+	</mappers>
+</configuration>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <!-- namespace 表示命名空间  通常会设置成：包名+SQL映射文件名-->
+ <mapper namespace="com.mapper.PersonMapper">
+	<!-- 嵌套查询：通过执行另一条sql映射语句来返回预期的特殊类型 -->
+	<select id="findPersonById" parameterType="Integer" resultMap="IdCardWithPersonResult">
+		select * from tb_person where id=#{id}
+	</select>
+	<resultMap type="person" id="IdCardWithPersonResult">
+		<id property="id" column="id"></id>
+		<result property="name" column="name"></result>
+		<result property="age" column="age"></result>
+		<result property="sex" column="sex"></result>
+		<!-- 一对一：association使用select属性引入另外一条sql语句 -->
+		<association property="card" column="card_id" javaType="IdCard" select="com.mapper.IdCardMapp.findById"/>
+	</resultMap>
+	<!-- 嵌套结果 -->
+	<select id="findPersonById2" parameterType="Integer" resultMap="IdCardWithPersonResult2">
+		select
+			p.*,
+			c.code
+		from
+			tb_person p,tb_idcard c
+		where
+			p.card_id = c.id
+		and p.id=#{id}
+	</select>
+	<resultMap type="Person" id="IdCardWithPersonResult2">
+		<id property="id" column="id"/>
+		<result property="name" column="name"/>
+		<result property="age" column="age"/>
+		<result property="sex" column="sex"/>
+		<association property="card" column="card_id" javaType="IdCard">
+			<id property="id" column="id"/>
+			<result property="code" column="code"/>
+		</association>
+	</resultMap>
+ </mapper>

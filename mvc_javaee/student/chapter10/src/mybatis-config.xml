@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<properties resource="db.properties"/>
+
+	<settings>
+		<!-- 打开延迟加载的开关 -->
+		<setting name="lazyLoadingEnabled" value="true"/>
+		<!-- 将积极加载改为延迟加载，即按需加载 -->
+		<setting name="aggressiveLazyLoading" value="false"/>
+	</settings>
+	
+	<!-- 类路径别名 -->
+	<typeAliases>
+		<!-- <typeAlias  type="com.po.Customer"/> -->
+		<package name="com.po"/>
+	</typeAliases>
+	<!-- 配置环境，默认的环境id为mysql -->
+	<environments default="mysql">
+		<environment id="mysql">
+			<!-- 使用jdbc事物管理 -->
+			<transactionManager type="JDBC"/>
+			<!-- 数据库连接池 -->
+			<dataSource type="POOLED">
+				<property name="driver" value="${jdbc.driver}"/>
+				<property name="url" value="${jdbc.url}"/>
+				<property name="username" value="${jdbc.username}"/>
+				<property name="password" value="${jdbc.password}"/>
+			</dataSource>
+		</environment>
+	</environments>
+	<!-- 2 配置Mapper的位置 -->
+	<mappers>
+		<mapper resource="com/mapper/IdCardMapper.xml"/>
+		<mapper resource="com/mapper/PersonMapper.xml"/>
+		<mapper resource="com/mapper/UserMapper.xml"/>
+		<mapper resource="com/mapper/OrdersMapper.xml"/>
+		<mapper resource="com/mapper/ProductMapper.xml"/>
+	</mappers>
+</configuration>

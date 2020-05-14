@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <!-- namespace 表示命名空间  通常会设置成：包名+SQL映射文件名-->
+ <mapper namespace="com.mapper.IdCardMapper">
+	<select id="findById" parameterType="Integer" resultType="idCard">
+		select * from tb_idcard where id = #{id}
+	</select>
+ </mapper>

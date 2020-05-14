@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace命名空间    命名:包名+sql映射文件名-->
+<mapper namespace="com.mapper.CustomerMapper">
+	<sql id="customerColumns">
+		username,phone
+	</sql>
+	<!-- 定义表的前缀名 -->
+	<sql id="tablename">
+		${prefix}customer
+	</sql>
+	<!-- 定义要查询的表 -->
+	<sql id="someinclude">
+		from <include refid="${include_target}"/>
+	</sql>
+	<!-- 根据客户编号查询客户信息 -->
+	<select id="findById" parameterType="Integer" resultType="customer">
+		<!-- #{}表示一个占位符，相当于? -->
+		select 
+			<include refid="customerColumns"/>
+			<include refid="someinclude">
+				<property name="prefix" value="t_"/>
+				<property name="include_target" value="tablename"/>
+			</include>
+		 where id= #{id}
+	</select>
+	<select id="findByName" parameterType="String" resultType="com.po.Customer">
+		<!-- select*from t_customer where username like '%'${value}%' -->
+		select*from t_customer where username like concat('%', #{value},'%')
+	</select>
+	<!-- 添加 -->
+	<insert id="add" parameterType="com.po.Customer">
+		insert into t_customer(username,jobs,phone) values(#{username},#{jobs},#{phone})
+	</insert>
+	<!-- 更新 -->
+	<update id="update" parameterType="com.po.Customer">
+		update t_customer set username=#{username},jobs=#{jobs},phone=#{phone} where id=#{id}
+	</update>
+	<!-- 删除 -->
+	<delete id="del" parameterType="Integer">
+		delete from t_customer where id =#{id}
+	</delete>
+</mapper>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace命名空间    命名:包名+sql映射文件名-->
+<mapper namespace="com.mapper.CustomerMapper">
+	<!-- if元素使用 -->
+	<select id="findByNamdAndJobs" parameterType="customer" resultType="customer">
+		select * from t_customer where 1=1
+		<if test="username !=null and username !=''">
+			and username like concat('%',#{username},'%')
+		</if>
+		<if test="jobs !=null and jobs !=''">
+			and jobs = ${jobs}
+		</if>
+	</select>
+	<!-- <choose>(<when>、<otherwise>) 使用-->
+	<select id="findCustomerByNameOrJobs" parameterType="customer" resultType="customer">
+		select*from t_customer where 1=1
+		<choose>
+			<when test="username != null and username !=''">
+				and username like concat('%',#{username},'%')
+			</when>
+			<when test="jobs != null and jobs !=''">
+				and jobs like concat('%',#{jobs},'%')
+			</when>
+			<otherwise>
+				and phone is not null
+			</otherwise>
+		</choose>
+	</select>
+	<!-- where元素的使用 -->
+	<select id="findByNamdAndJobs1" parameterType="customer" resultType="customer">
+		select*from t_customer
+		<where>
+			<if test="username !=null and username !=''">
+			and username like concat('%',#{username},'%')
+		</if>
+		<if test="jobs !=null and jobs !=''">
+			and jobs = #{jobs}
+		</if>
+		</where> 
+	</select>
+	<!-- trim元素的使用 -->
+	<select id="findByNamdAndJobs2" parameterType="customer" resultType="customer">
+		select*from t_customer
+		<trim prefix="where" prefixOverrides="and">
+			<if test="username !=null and username !=''">
+				and username like concat('%',#{username},'%')
+			</if>
+			<if test="jobs !=null and jobs !=''">
+				and jobs = #{jobs}
+			</if>
+		</trim>
+	</select>
+	<!-- set元素的使用 -->
+	<update id="updateCustomer" parameterType="customer">
+		update t_customer 
+		<set>
+			<if test="username != null and username !=''">
+				username=#{username},
+			</if>
+			<if test="jobs != null and jobs !=''">
+				jobs=#{jobs},
+			</if>
+			<if test="phone != null and phone !=''">
+				phone=#{phone},
+			</if>
+		</set>
+		where id = #{id}
+	</update>
+	<!-- foreach元素使用 -->
+	<select id="findCustomerByIds" parameterType="List" resultType="customer">
+		select * from t_customer where id in 
+		<foreach collection="list" item="id" index="index" open="(" separator="," close=")">
+			#{id}
+		</foreach>
+	</select>
+	<!-- bind元素使用：根据客户名模糊查询客户信息 -->
+	<select id="findCustomerByName" parameterType="customer" resultType="customer">
+		<bind name="pattern_username" value="'%'+ _parameter.getUsername() + '%'"/>
+		select * from t_customer where username like #{pattern_username}
+	</select>
+	
+	
+	
+</mapper>
