@@ -28,7 +28,8 @@
 2. 选择Import选项
     ![Alt text](https://github.com/Daming-Cc/unknown_study_java/blob/master/images/Import.png)
 3. 选择选中的选项然后Next
-    ![Alt text](https://github.com/Daming-Cc/unknown_study_java/blob/master/images/Select.png)
+    ![Alt text](https://github.com/Daming-Cc/unknown_study_java/blob/master/images/Select.png)  
+    
 4. 点击Browse按钮选择克隆项目的地址位置
     ![Alt text](https://github.com/Daming-Cc/unknown_study_java/blob/master/images/Address.png)
 5. 然后点击Finish即可
