@@ -23,11 +23,11 @@
 
 ## 使用说明
 
-1. 点击左上角File![Alt text](https://github.com/Daming-Cc/unknown_study_java/tree/master/mvc_javaee/File.png)
-2. 选择Import选项![Alt text](https://github.com/Daming-Cc/unknown_study_java/tree/master/mvc_javaee/Import.png)
-3. 选择选中的选项Next![Alt text](https://github.com/Daming-Cc/unknown_study_java/tree/master/mvc_javaee/Select.png)
+1. 点击左上角File![Alt text](https://github.com/Daming-Cc/unknown_study_java/blob/master/image/File.png)
+2. 选择Import选项![Alt text](https://github.com/Daming-Cc/unknown_study_java/blob/master/image/Import.png)
+3. 选择选中的选项Next![Alt text](https://github.com/Daming-Cc/unknown_study_java/blob/master/image/Select.png)
 4. 点击Browse按钮选择克隆项目的地址位置 ![Alt text](https://github.com/Daming-Cc/unknown_study_java/blob/master/image/Address.png)
-5. 然后点击Finish即可![Alt text](https://github.com/Daming-Cc/unknown_study_java/tree/master/mvc_javaee/Finish.png)
+5. 然后点击Finish即可![Alt text](https://github.com/Daming-Cc/unknown_study_java/blob/master/image/Finish.png)
 ## 相关仓库
 
 - [unknown study android](https://github.com/Daming-Cc/unknown_study_android) — 💌 unknown的android
