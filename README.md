@@ -18,16 +18,16 @@
 4. 一个不知名的
 
 ## 安装
-w w
+
 这个项目使用 [eclipse](https://www.eclipse.org/) 同级或更高IDE [IDEA](https://www.jetbrains.com/products.html#type=ide)。请确保你本地安装了它们。
 
 ## 使用说明
 
-点击左上角File(https://github.com/Daming-Cc/unknown_study_java/tree/master/mvc_javaee/File.png)
-选择Import选项(https://github.com/Daming-Cc/unknown_study_java/tree/master/mvc_javaee/Import.png)
-选择选中的选项Next(https://github.com/Daming-Cc/unknown_study_java/tree/master/mvc_javaee/Select.png)
-点击Browse按钮选择克隆项目的地址位置(https://github.com/Daming-Cc/unknown_study_java/tree/master/mvc_javaee/Address.png)
-然后点击Finish即可(https://github.com/Daming-Cc/unknown_study_java/tree/master/mvc_javaee/Finish.png)
+1. 点击左上角File(https://github.com/Daming-Cc/unknown_study_java/tree/master/mvc_javaee/File.png)
+2. 选择Import选项(https://github.com/Daming-Cc/unknown_study_java/tree/master/mvc_javaee/Import.png)
+3. 选择选中的选项Next(https://github.com/Daming-Cc/unknown_study_java/tree/master/mvc_javaee/Select.png)
+4. 点击Browse按钮选择克隆项目的地址位置(https://github.com/Daming-Cc/unknown_study_java/blob/master/image/Address.png)
+5. 然后点击Finish即可(https://github.com/Daming-Cc/unknown_study_java/tree/master/mvc_javaee/Finish.png)
 ## 相关仓库
 
 - [unknown study android](https://github.com/Daming-Cc/unknown_study_android) — 💌 unknown的android
