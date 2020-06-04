@@ -15,11 +15,13 @@
 1. 一个集章完成最后一个集合章的超小目标
 2. 一个闲着没事干的进度保存
 3. 一个会报错的进度
-4. 一个不知名的
+4. 一个不知名
 
 ## 安装
 
 这个项目使用 [eclipse](https://www.eclipse.org/) 同级或更高IDE [IDEA](https://www.jetbrains.com/products.html#type=ide)。请确保你本地安装了它们。
+
+本库下所有project均使用tomcat.apache_8.5.45版本，可选择tools文件夹下其它版本或自行进入官网下载[tomcat.apache](https://tomcat.apache.org/)
 
 ## 使用说明
 
@@ -28,12 +30,13 @@
 2. 选择Import选项
     ![Alt text](https://github.com/Daming-Cc/unknown_study_java/blob/master/images/Import.png)
 3. 选择选中的选项然后Next
+
     ![Alt text](https://github.com/Daming-Cc/unknown_study_java/blob/master/images/Select.png)  
-    
 4. 点击Browse按钮选择克隆项目的地址位置
     ![Alt text](https://github.com/Daming-Cc/unknown_study_java/blob/master/images/Address.png)
 5. 然后点击Finish即可
     ![Alt text](https://github.com/Daming-Cc/unknown_study_java/blob/master/images/Finish.png)
+
 ## 相关仓库
 
 - [unknown study android](https://github.com/Daming-Cc/unknown_study_android) — 💌 unknown的android
