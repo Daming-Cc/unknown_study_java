@@ -10,6 +10,8 @@
 
 ## 背景
 
+逐渐保持持续更新
+
 这个仓库的目标是：
 
 1. 一个集章完成最后一个集合章的超小目标
@@ -19,9 +21,9 @@
 
 ## 安装
 
-这个项目使用 [eclipse](https://www.eclipse.org/) 同级或更高IDE [IDEA](https://www.jetbrains.com/products.html#type=ide)。请确保你本地安装了它们。
+本库下项目使用 [eclipse](https://www.eclipse.org/) 同级或更高IDE [IDEA](https://www.jetbrains.com/products.html#type=ide)。请确保你本地安装了它们。
 
-本库下所有project均使用tomcat.apache_8.5.45版本，可选择tools文件夹下其它版本或自行进入官网下载[tomcat.apache](https://tomcat.apache.org/)
+本库下所有项目均使用tomcat.apache_8.5.45版本，可选择tools文件夹下其它版本或自行进入官网下载[tomcat.apache](https://tomcat.apache.org/)
 
 ## 使用说明
 
