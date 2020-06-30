@@ -1,0 +1,16 @@
+eclipse.preferences.version=1
+encoding//config/db.properties=UTF-8
+encoding//src/com/common/utils/NavigationTag.java=UTF-8
+encoding//src/com/common/utils/Page.java=UTF-8
+encoding//src/com/core/controller/CustomerController.java=gbk
+encoding//src/com/core/controller/UserController.java=gbk
+encoding//src/com/core/dao/BaseDictDao.java=UTF-8
+encoding//src/com/core/dao/CustomerDao.java=GBK
+encoding//src/com/core/service/BaseDictService.java=UTF-8
+encoding//src/com/core/service/CustomerService.java=GBK
+encoding//src/com/core/service/impl/BaseDictServiceImpl.java=UTF-8
+encoding//src/com/core/service/impl/CustomerServiceImpl.java=GBK
+encoding//src/config=UTF-8
+encoding//src/config/db.properties=UTF-8
+encoding//src/config/log4j.properties=UTF-8
+encoding/<project>=UTF-8
