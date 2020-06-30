@@ -17,20 +17,20 @@
 
 ## 使用说明
 
-1. 需要添加的文件
-    ![Alt text](https://github.com/Daming-Cc/unknown_study_java/blob/master/images/ADD1.png)
-    ![Alt text](https://github.com/Daming-Cc/unknown_study_java/blob/master/images/ADD2.png)
-    ![Alt text](https://github.com/Daming-Cc/unknown_study_java/blob/master/images/ADD3.png)
-    ![Alt text](https://github.com/Daming-Cc/unknown_study_java/blob/master/images/ADD4.png)
-    ![Alt text](https://github.com/Daming-Cc/unknown_study_java/blob/master/images/ADD5.png)
+### 需要添加的文件
+1. ![Alt text](https://github.com/Daming-Cc/unknown_study_java/blob/master/images/ADD1.png)
+2. ![Alt text](https://github.com/Daming-Cc/unknown_study_java/blob/master/images/ADD2.png)
+3. ![Alt text](https://github.com/Daming-Cc/unknown_study_java/blob/master/images/ADD3.png)
+4. ![Alt text](https://github.com/Daming-Cc/unknown_study_java/blob/master/images/ADD4.png)
+5. ![Alt text](https://github.com/Daming-Cc/unknown_study_java/blob/master/images/ADD5.png)
     
-2. 需要修改的文件
-    ![Alt text](https://github.com/Daming-Cc/unknown_study_java/blob/master/images/EDIT1.png)
-    ![Alt text](https://github.com/Daming-Cc/unknown_study_java/blob/master/images/EDIT2.png)
-    ![Alt text](https://github.com/Daming-Cc/unknown_study_java/blob/master/images/EDIT3.png)
-    ![Alt text](https://github.com/Daming-Cc/unknown_study_java/blob/master/images/EDIT4.png)
-    ![Alt text](https://github.com/Daming-Cc/unknown_study_java/blob/master/images/EDIT5.png)
-    ![Alt text](https://github.com/Daming-Cc/unknown_study_java/blob/master/images/EDIT6.png)
+### 需要修改的文件
+1. ![Alt text](https://github.com/Daming-Cc/unknown_study_java/blob/master/images/EDIT1.png)
+2. ![Alt text](https://github.com/Daming-Cc/unknown_study_java/blob/master/images/EDIT2.png)
+3. ![Alt text](https://github.com/Daming-Cc/unknown_study_java/blob/master/images/EDIT3.png)
+3. ![Alt text](https://github.com/Daming-Cc/unknown_study_java/blob/master/images/EDIT4.png)
+5. ![Alt text](https://github.com/Daming-Cc/unknown_study_java/blob/master/images/EDIT5.png)
+6. ![Alt text](https://github.com/Daming-Cc/unknown_study_java/blob/master/images/EDIT6.png)
 
 ## 相关仓库
 
